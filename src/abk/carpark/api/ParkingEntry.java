@@ -1,4 +1,4 @@
-package abk.carpark;
+package abk.carpark.api;
 
 public class ParkingEntry {
 	int slot;
