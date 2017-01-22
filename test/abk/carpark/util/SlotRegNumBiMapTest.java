@@ -6,16 +6,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-public class RegColorBiMapTest {
+public class SlotRegNumBiMapTest {
 
-	private SlotColorBiMap biMap;
+	private SlotRegNumBiMap biMap;
 
 	@Rule
 	public ExpectedException e = ExpectedException.none();
 
 	@Before
 	public void setUp() {
-		this.biMap = new SlotColorBiMap();
+		this.biMap = new SlotRegNumBiMap();
 	}
 
 	@Test
@@ -73,5 +73,17 @@ public class RegColorBiMapTest {
 		String bySlot = biMap.getBySlot(2);
 		Assert.assertNull(bySlot);
 		Assert.assertEquals(0, byReg);
+	}
+	
+	@Test
+	public void size_empty_return0(){
+		Assert.assertEquals(0, biMap.size());
+	}
+	
+	@Test
+	public void size_twoEntries_return2(){
+		biMap.put(1, "KA­01­HH­1234");
+		biMap.put(2, "KA­02­HH­1234");
+		Assert.assertEquals(2, biMap.size());
 	}
 }

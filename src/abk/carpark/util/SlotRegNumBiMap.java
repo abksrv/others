@@ -11,12 +11,12 @@ import java.util.Map;
  * @author AbK
  *
  */
-public class SlotColorBiMap {
+public class SlotRegNumBiMap {
 
 	ArrayList<String> regNumAtSlotMinusOne;
 	Map<String, Integer> regToSlotMap;
 
-	public SlotColorBiMap() {
+	public SlotRegNumBiMap() {
 		regNumAtSlotMinusOne = new ArrayList<String>();
 		regToSlotMap = new HashMap<String, Integer>();
 	}
@@ -58,5 +58,9 @@ public class SlotColorBiMap {
 			regNumAtSlotMinusOne.remove(i - 1);
 			regToSlotMap.remove(slot);
 		}
+	}
+
+	public int size() {
+		return regToSlotMap.size();
 	}
 }
