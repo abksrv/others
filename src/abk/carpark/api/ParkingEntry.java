@@ -1,6 +1,7 @@
 package abk.carpark.api;
 
 public class ParkingEntry implements Comparable<ParkingEntry> {
+
 	int slot;
 	private Car car;
 
