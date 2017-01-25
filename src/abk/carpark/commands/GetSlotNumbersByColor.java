@@ -5,16 +5,16 @@ import java.util.List;
 import abk.carpark.api.MultilevelCarPark;
 import abk.carpark.api.Query;
 
-public class GetRegistrationNumsByColor implements Query<List<String>>
+public class GetSlotNumbersByColor implements Query<List<Integer>>
 {
-    
-    private static final String queryName = "registration_numbers_for_cars_with_colour";
+
+    private static final String queryName = "slot_numbers_for_cars_with_colour";
     private MultilevelCarPark carPark;
     
     @Override
-    public List<String> execute(String args)
+    public List<Integer> execute(String args)
     {
-        return carPark.getParkingRegister().getRegNumsByColor(args);
+        return carPark.getParkingRegister().getSlotByColor(args);
     }
     
     @Override

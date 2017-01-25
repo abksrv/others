@@ -44,8 +44,6 @@ public class ParkingRegisterTest {
 		Assert.assertEquals(2, parkingRegister.status().length);
 	}
 
-	 
-	
 	@Test
 	public void exit_exitIllegalCar_throwException() {
 		parkingRegister.enter(1, REG_NUM_1, COLOR_WHITE);

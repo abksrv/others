@@ -21,4 +21,9 @@ public class MultilevelCarPark
     {
         
     }
+    
+    public ParkingRegister getParkingRegister()
+    {
+        return parkingRegister;
+    }
 }
