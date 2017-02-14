@@ -2,10 +2,10 @@ package sorters;
 
 import java.io.IOException;
 
-import util.ReadUtil;
-import util.WriteUtil;
 import bitvector.BitVector;
-import edu.princeton.cs.algs4.StopwatchCPU;
+import util.ReadUtil;
+import util.StopwatchCPU;
+import util.WriteUtil;
 
 public class BitmapSortFromFile {
 	public static void sort(int[] arr) {
@@ -24,7 +24,7 @@ public class BitmapSortFromFile {
 		int[] arr = ReadUtil.read(1000000, "nums.txt");
 		StopwatchCPU sw = new StopwatchCPU();
 		sort(arr);
-		System.out.println("Bitmap sort:" + sw.elapsedTime() + " s");
+		System.out.println("Bitmap sort:" + sw.elapsedTime() + " ms");
 		WriteUtil.write("bitmapsorted.txt", arr);
 	}
 }

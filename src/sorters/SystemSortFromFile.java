@@ -2,10 +2,10 @@ package sorters;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 
-import edu.princeton.cs.algs4.StopwatchCPU;
 import util.ReadUtil;
+import util.StopwatchCPU;
 import util.WriteUtil;
 
 public class SystemSortFromFile {
@@ -14,7 +14,7 @@ public class SystemSortFromFile {
 		ArrayList<Integer> list = new ArrayList<>();
 		for(int a : arr)
 			list.add(a);
-		Collections.sort(list);
+		Arrays.sort(arr);
 		int i = 0;
 		for(Integer e : list)
 			arr[i++] = e;
@@ -24,9 +24,7 @@ public class SystemSortFromFile {
 		int[] arr = ReadUtil.read(1000000, "nums.txt");
 		StopwatchCPU sw = new StopwatchCPU();
 		sort(arr);
-		System.out.println("System sort:"+sw.elapsedTime()+" s");
+		System.out.println("System sort:"+sw.elapsedTime()+" ms");
 		WriteUtil.write("syssorted.txt", arr);
 	}
-
-	
 }
