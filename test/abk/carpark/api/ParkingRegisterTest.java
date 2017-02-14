@@ -44,8 +44,6 @@ public class ParkingRegisterTest {
 		Assert.assertEquals(2, parkingRegister.status().length);
 	}
 
-	 
-	
 	@Test
 	public void exit_exitIllegalCar_throwException() {
 		parkingRegister.enter(1, REG_NUM_1, COLOR_WHITE);
@@ -152,4 +150,25 @@ public class ParkingRegisterTest {
 		int slot = parkingRegister.getSlotByRegNum(REG_NUM_2);
 		Assert.assertEquals(0, slot);
 	}
+	
+	@Test
+	public void enter_moreThanCapacity_shouldReturnFalse()
+	{
+	    parkingRegister.enter(1, REG_NUM_1, COLOR_WHITE);
+        parkingRegister.enter(2, REG_NUM_2, COLOR_WHITE);
+        parkingRegister.enter(3, REG_NUM_3, COLOR_WHITE);
+        boolean enter = parkingRegister.enter(4, REG_NUM_4, COLOR_WHITE);
+        Assert.assertFalse(enter);
+	}
+	
+	@Test
+    public void enter_enterAfterExit_shouldAccept()
+    {
+        parkingRegister.enter(1, REG_NUM_1, COLOR_WHITE);
+        parkingRegister.enter(2, REG_NUM_2, COLOR_WHITE);
+        parkingRegister.enter(3, REG_NUM_3, COLOR_WHITE);
+        parkingRegister.exit(3);
+        boolean enter = parkingRegister.enter(3, REG_NUM_4, COLOR_WHITE);
+        Assert.assertTrue(enter);
+    }
 }
